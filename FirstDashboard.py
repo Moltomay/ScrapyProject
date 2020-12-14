@@ -21,7 +21,6 @@ def index():
 
 def create_plot(feature):
     if feature == 'First plot':
-
         x = DVDs
         y = Prices
         df = pd.DataFrame({'x': x, 'y': y}) # creating a sample dataframe
