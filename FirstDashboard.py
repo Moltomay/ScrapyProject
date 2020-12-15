@@ -28,6 +28,14 @@ prime.index = range(8)
 prime_name=prime.iloc[:,0]
 prime_reviews=prime.iloc[:,1]
 
+prime = pd.read_csv("editors.csv")
+prime=prime.drop([3,6,12,15],axis=0)
+df1=prime['Editor'].value_counts()
+df2=pd.DataFrame(df1)
+df2.reset_index(level=0, inplace=True)
+editor_name=df2.iloc[:,0]
+editor_occurence=df2.iloc[:,1]
+
 
 @app.route('/')
 def index():
@@ -78,8 +86,8 @@ def create_plot(feature):
             ]
 
     elif feature == 'Fourth plot':
-        x = Prices
-        y = Prices
+        x = editor_name
+        y = editor_occurence
         df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
         data = [
                 go.Bar(
