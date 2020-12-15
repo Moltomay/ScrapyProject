@@ -21,6 +21,13 @@ new_data=movies.drop([17,9,16,18,1,15,6,10,7,14],axis=0)
 movies_name=new_data.iloc[:,0]
 movies_rating=new_data.iloc[:,1]
 
+prime = pd.read_csv("prime.csv")
+prime=prime.drop([1,2,3,5,8,10,12,13],axis=0)
+prime=prime.reindex([4, 15, 9, 6,11,0,14,7])
+prime.index = range(8)
+prime_name=prime.iloc[:,0]
+prime_reviews=prime.iloc[:,1]
+
 
 @app.route('/')
 def index():
@@ -60,11 +67,11 @@ def create_plot(feature):
         ]
 
     elif feature == 'Third plot':
-        x = Prices
-        y = Prices
+        x = prime_name
+        y = prime_reviews
         df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
         data = [
-              go.Scatter(
+              go.Bar(
                     x=df['x'],  # assign x as the dataframe column 'x'
                     y=df['y']
                 )
