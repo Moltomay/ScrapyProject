@@ -39,12 +39,12 @@ editor_occurence=df2.iloc[:,1]
 
 @app.route('/')
 def index():
-    feature = 'Amazon plot'
+    feature = 'Amazon DVDs'
     bar = create_plot(feature)
     return render_template('index.html', plot=bar)
 
 def create_plot(feature):
-    if feature == 'Amazon plot':
+    if feature == 'Amazon DVDs':
         x = DVDs
         y = Prices
         df = pd.DataFrame({'x': x, 'y': y}) # creating a sample dataframe
@@ -63,7 +63,7 @@ def create_plot(feature):
 
 
 
-    elif feature=='IMDB plot':
+    elif feature=='IMDB movies':
         x = movies_name
         y = movies_rating
         df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
@@ -74,7 +74,7 @@ def create_plot(feature):
             )
         ]
 
-    elif feature == 'Third plot':
+    elif feature == 'Amazon movies':
         x = prime_name
         y = prime_reviews
         df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
@@ -85,12 +85,12 @@ def create_plot(feature):
                 )
             ]
 
-    elif feature == 'Fourth plot':
+    elif feature == 'Amazon VGs':
         x = editor_name
         y = editor_occurence
         df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
         data = [
-                go.Bar(
+                go.Scatter(
                         x=df['x'],  # assign x as the dataframe column 'x'
                         y=df['y']
                     )
