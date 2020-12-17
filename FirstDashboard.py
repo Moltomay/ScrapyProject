@@ -60,10 +60,32 @@ def create_plot(feature):
 
         ]
 
+        fig = go.Figure(data=[go.Bar(x=df['x'], y=df['y'],
+                                     )])
+        # Customize aspect
+        fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
+                          marker_line_width=3.5, opacity=0.6)
+
+        fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
+        fig.update_layout(title_text='DVDs sortis lors du dernier mois',
+                yaxis=dict(
+                    title='Prix (dollars)',
+                    titlefont_size=16,
+                    tickfont_size=14,
+        ))
+        fig.update_layout(
+            autosize=False,
+            width=1300,
+            height=700,
+        )
+
+
+
 
 
 
     elif feature=='IMDB movies':
+        colors = ['lightslategray', ] * 5
         x = movies_name
         y = movies_rating
         df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
@@ -73,6 +95,25 @@ def create_plot(feature):
                 y=df['y']
             )
         ]
+
+        fig = go.Figure(data=[go.Bar(x=df['x'], y=df['y'],
+                                     )])
+        # Customize aspect
+        fig.update_traces(marker_color='blue', marker_line_color='rgb(8,48,107)',
+                          marker_line_width=3.5, opacity=0.6,),
+
+        fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
+        fig.update_layout(title_text='TOP 10 films de 2019',
+                          yaxis=dict(
+                              title='Metascore',
+                              titlefont_size=16,
+                              tickfont_size=14,
+                          ))
+        fig.update_layout(
+            autosize=False,
+            width=1300,
+            height=700,
+        )
 
     elif feature == 'Amazon movies':
         x = prime_name
@@ -85,6 +126,26 @@ def create_plot(feature):
                 )
             ]
 
+        fig = go.Figure(data=[go.Bar(x=df['x'], y=df['y'],
+                                     )])
+        # Customize aspect
+        fig.update_traces(marker_color='lightslategray', marker_line_color='rgb(8,48,107)',
+                          marker_line_width=3.5, opacity=0.6)
+
+        fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
+        fig.update_layout(title_text='Films proposés par Amazon Prime',
+                          yaxis=dict(
+                              title='Nombre de reviews',
+                              titlefont_size=16,
+                              tickfont_size=14,
+                          ))
+        fig.update_layout(
+            autosize=False,
+            width=1300,
+            height=700,
+        )
+
+
     elif feature == 'Amazon VGs':
         x = editor_name
         y = editor_occurence
@@ -96,10 +157,29 @@ def create_plot(feature):
                     )
                 ]
 
+        fig = go.Figure(data=[go.Scatter(x=df['x'], y=df['y'],
+                                     )])
+        # Customize aspect
+        fig.update_traces(marker_color='crimson', marker_line_color='rgb(8,48,107)',
+                          marker_line_width=3.5, opacity=0.6)
+
+        fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
+        fig.update_layout(title_text='Editeurs jeux videos dernier mois',
+                          yaxis=dict(
+                              title='Nombre de jeux sortis',
+                              titlefont_size=16,
+                              tickfont_size=14,
+                          ))
+        fig.update_layout(
+            autosize=False,
+            width=1300,
+            height=700,
+        )
 
 
 
-    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
     return graphJSON
 
