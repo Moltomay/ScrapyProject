@@ -33,7 +33,7 @@ To run this project locally follow the steps below :
 
 4- Run FirstDashboard.py
 
-## Heroku Deployment
+## Heroku
 
 To deploy this project on Heroku follow the steps below : 
 
@@ -58,7 +58,7 @@ $ git push heroku master
 ```
 ## Result 
 
-![Result Heroku](https://ibb.co/RB7n322)
+![alt text](https://ibb.co/RB7n322)
 
 
 
