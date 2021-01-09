@@ -1,4 +1,4 @@
-# Web scrapping project with scrapy
+# Flask application to visualise scrapped data with scrapy
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,7 +12,7 @@
 * [Result](#Result)
 
 ## General info
-The idea behind the project is to scrape data from IMDB and Amazon websites and then store this data in CSV files, on which we will apply some visualisations. Then we will deploy a FLASK application with our visualisations on Heroku. This guideline is about how to run the Flask application as well as deploying it to Heroku. 
+The idea behind the project is to scrape data from IMDB and Amazon websites and then store this data in CSV files, on which we will apply some visualisations. Then we will deploy a FLASK application with our visualisations on Heroku. This guideline is about how to run the Flask application locally as well as deploying it to Heroku. 
 
 ## Technologies
 
@@ -58,7 +58,7 @@ $ git push heroku master
 ```
 ## Result 
 
-![alt text](https://imgur.com/ilWfZp5)
+![alt text](https://user-images.githubusercontent.com/16072777/104095678-81231a00-5298-11eb-8d3f-82fa1544a715.png)
 
 
 
