@@ -58,7 +58,7 @@ $ git push heroku master
 ```
 ## Result 
 
-![alt text](https://ibb.co/RB7n322)
+![alt text](https://imgur.com/ilWfZp5)
 
 
 
