@@ -9,7 +9,7 @@
 
 * [Heroku](#Heroku)
 
-* [Result](#Result)
+* [Demo](#Demo)
 
 ## General info
 The idea behind the project is to scrape data from IMDB and Amazon websites and then store this data in CSV files, on which we will apply some visualisations with the help of the plotly library. Then we will deploy a FLASK application with our visualisations on Heroku. This guideline is about how to run the Flask application locally as well as deploying it to Heroku. 
@@ -56,7 +56,9 @@ $ git commit -am "commit message"
 $ git push heroku master
 
 ```
-## Result 
+## Demo
+
+[Project link](https://web-semantique.herokuapp.com)
 
 ![alt text](https://user-images.githubusercontent.com/16072777/104095678-81231a00-5298-11eb-8d3f-82fa1544a715.png)
 
