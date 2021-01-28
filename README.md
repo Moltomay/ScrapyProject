@@ -12,7 +12,19 @@
 * [Demo](#Demo)
 
 ## General info
-The idea behind the project is to scrape data from IMDB and Amazon websites and then store this data in CSV files, on which we will apply some visualisations with the help of the plotly library. Then we will deploy a FLASK application with our visualisations on Heroku. This guideline is about how to run the Flask application locally as well as deploying it to Heroku. 
+The idea behind the project is to scrape data from IMDB and Amazon websites and then store this data in CSV files, on which we will apply some visualisations with the help of the plotly library. Then we will deploy a FLASK application with our visualisations on Heroku.
+
+So to summarize, the steps are as follow : 
+
+1- Scrap data with Scrapy.
+
+2- Store data in CSV files.
+
+3- Clean the CSV files and apply visualisations with Plotly.
+
+4- Deploy Flask application with the visualisations.
+
+This guideline is about how to run the Flask application locally as well as deploying it to Heroku.
 
 ## Technologies
 
